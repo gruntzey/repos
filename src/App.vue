@@ -36,12 +36,12 @@ export default {
     search() {
       if (this.input) {
         (async() => {
-          const octokit = new Octokit({ auth: `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` });
+          // { auth: `auth_key` }
+          const octokit = new Octokit();
           const response = await octokit.request("GET /search/repositories?q={input}", {
             input: this.input,
             per_page: 8,
           });
-          // const response = await import('./api.js').then(resolve => resolve.data.data.items)
           this.restData = response.data.items
           console.log(response)
         })()
