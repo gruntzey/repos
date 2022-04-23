@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center w-screen h-screen">
+  <div class="flex flex-col items-center justify-center w-screen h-max mt-14 overflow-auto">
     <form @submit.prevent>
       <input class=" border-4 border-slate-900 w-96 h-10 text-2xl pl-3 focus-visible:outline-none mb-14" 
       type="text" 
@@ -45,6 +45,8 @@ export default {
           this.restData = response.data.items
           console.log(response)
         })()
+      } else {
+        this.restData = {}
       }
     },
 
